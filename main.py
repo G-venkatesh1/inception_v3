@@ -82,7 +82,7 @@ def torch_validation(model, val_loader, device):
 def get_dataloader(args, model, onnx_val=False):
     _dir = os.path.join(args.dataset_dir, "val")
     data_config = resolve_model_data_config(model)
-    dataset = timm.data.ImageDataset(root=_dir, transform=create_transform(**data_config, is_training=False))
+    dataset = ImageDataset(root=_dir, transform=create_transform(**data_config, is_training=False))
     return (
         dataset, 
         timm.data.create_loader(dataset, batch_size=1, num_workers=1, pin_memory=True)
