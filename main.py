@@ -1,4 +1,7 @@
 
+import timm
+import torch
+import torchvision
 from timm.data import resolve_model_data_config, create_transform,create_loader,ImageDataset
 from timm import create_model
 from module import OnnxStaticQuantization
