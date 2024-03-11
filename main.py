@@ -85,7 +85,7 @@ def get_dataloader(args, model, onnx_val=False):
     dataset = ImageDataset(root='/kaggle/input/imagenet-1k-validation/imagenet_dataset', transform=create_transform(**data_config, is_training=False))
     return (
         dataset, 
-        timm.data.create_loader(dataset, batch_size=1, num_workers=1, pin_memory=True)
+        timm.data.create_loader(dataset,(1,3,299,299), batch_size=1, num_workers=1, pin_memory=True)
     )
 
 def get_model(args):
