@@ -140,7 +140,6 @@ def main(args):
 
     # INT8 OnnxRuntime
     onnx_validation(int8_onnx_path, val_dataloader)
-
     return
 
 def get_argparse():
